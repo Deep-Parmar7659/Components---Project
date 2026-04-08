@@ -1,0 +1,50 @@
+/* minimal */
+@import "tailwindcss";
+
+/* ✅ REQUIRED FOR DARK MODE */
+@variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  /* html color-scheme:- Better browser rendering */
+  html {
+    color-scheme: light dark;
+  }
+  /* body margin: 0 - Layout reset */
+  body {
+    margin: 0;
+  }
+}
+
+/* =========================
+   🎯 CUSTOM ANIMATIONS
+========================= */
+
+/* Spin animation (used in your project) */
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  /* spin-slow animation :- You are using it */
+  animation: spin-slow 6s linear infinite;
+}
+/* For Smooth Animatios */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.3s ease;
+}
