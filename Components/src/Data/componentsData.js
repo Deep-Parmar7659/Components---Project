@@ -1,4 +1,6 @@
 // Stores all components info (name, type, description)
+// Data → Page → map() → UI
+// Data will stored in JSON format and dynamically render using map().
 export const componentsData = [
   // ===== BASIC =====
   {

@@ -1,7 +1,7 @@
 // Main section (title + grid)
 import Section from "../../UIComponents/Section";
 import Container from "../../UIComponents/Container";
-import features from "./featuresData";
+import features from "./FeaturesData";
 import FeatureCard from "./FeatureCard";
 const FeaturesSection = () => {
   return (

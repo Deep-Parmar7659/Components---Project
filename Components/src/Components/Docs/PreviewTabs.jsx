@@ -19,7 +19,7 @@ const PreviewTabs = ({ preview, code }) => {
           Preview
         </button>
 
-        <button
+        {/* <button
           onClick={() => setActiveTab("code")}
           className={`pb-2 text-sm font-medium ${
             activeTab === "code"
@@ -28,7 +28,7 @@ const PreviewTabs = ({ preview, code }) => {
           }`}
         >
           Code
-        </button>
+        </button> */}
       </div>
 
       {/* Content */}

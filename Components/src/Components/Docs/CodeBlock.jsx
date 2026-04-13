@@ -6,7 +6,7 @@ import {
 
 import { useToast } from "../AdvancedComponents/Toast/useToast";
 
-const CodeBlock = ({ code, fileName }) => {
+const CodeBlock = ({ code, fileName, hideCode = false }) => {
   const { addToast } = useToast();
 
   const handleCopy = () => {

@@ -1,3 +1,6 @@
+// This is the brain of Our Project.
+// Handles Routing, Loads layout, Connects all pages.
+// Layout contain Navbar, Sidebar, Footer. Purpose:- Layout → Wraps Pages → Consistent UI
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import HomePage from "./Pages/HomePage";
@@ -6,10 +9,8 @@ import ComponentDetails from "./Pages/ComponentDetails";
 import TemplatesPage from "./Pages/TemplatesPage";
 import TemplateDetails from "./Pages/TemplateDetails";
 import ContactPage from "./Pages/ContactPage";
-
 import DocsLayout from "./Layout/DocsLayout/DocsLayout";
 import ScrollToTop from "./Components/ScrollToTop";
-
 import ToastContainer from "./Components/UIComponents/ToastContainer";
 import FavoritesPage from "./Pages/FavoritesPage";
 function App() {
@@ -17,6 +18,7 @@ function App() {
     <Router>
       <ToastContainer />
       <Routes>
+        {/* User clicks link → Route changes → New page loads */}
         {/* Global Layout */}
         <Route path="/" element={<DocsLayout />}>
           <Route index element={<HomePage />} />

@@ -1,3 +1,6 @@
+// This file start React.
+// Flow :- Import React, App.jsx, Renders App inside (root).
+// index.html → main.jsx → App.jsx
 import { StrictMode } from "react";
 import "./index.css";
 import "./styles/theme.css";

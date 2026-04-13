@@ -6,6 +6,7 @@ import FeaturesSection from "../Components/Sections/Features/FeaturesSection";
 import { testimonials } from "../Components/Sections/AnimatedTestimonials/testimonialsData";
 import BenefitsSection from "../Components/Sections/Benefits/BenefitsSection";
 import CTASection from "../Components/Sections/CTA/CTASection";
+
 function HomePage() {
   const benefitsRef = useRef(null);
 
