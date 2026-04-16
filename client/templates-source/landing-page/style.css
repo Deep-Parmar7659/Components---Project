@@ -1,0 +1,14 @@
+body {
+  margin: 0;
+  font-family: Arial;
+}
+
+.hero {
+  height: 100vh;
+  background: linear-gradient(to right, #3b82f6, #9333ea);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

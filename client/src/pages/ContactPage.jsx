@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useToast } from "../components/ui/Toast/useToast";
-
+import emailjs from "@emailjs/browser";
 function Contact() {
   const [formData, setFormData] = useState({
     name: "",
@@ -64,18 +64,49 @@ function Contact() {
 
     setLoading(true);
 
-    setTimeout(() => {
-      setLoading(false);
-      addToast("Message sent successfully!");
+    // ✅ 1. Admin notification
+    emailjs
+      .send(
+        "service_g69v7dh",
+        "template_s23pbe3",
+        {
+          from_name: formData.name, // {{from_name}} in template
+          from_email: formData.email, // {{from_email}} in template
+          message: formData.message, // {{message}} in template
+        },
+        "4X_ClWGMXO_focbWB",
+      )
+      .then(() => {
+        // ✅ 2. Auto-reply to user
+        return emailjs.send(
+          "service_g69v7dh",
+          "template_4zunf6m",
+          {
+            to_name: formData.name,
+            email: formData.email, // ✅ matches {{email}} in template
+            message: formData.message,
+          },
+          "4X_ClWGMXO_focbWB",
+        );
+      })
+      .then(() => {
+        addToast("Message sent successfully! ✅");
 
-      setFormData({
-        name: "",
-        email: "",
-        message: "",
+        setFormData({
+          name: "",
+          email: "",
+          message: "",
+        });
+
+        setErrors({});
+      })
+      .catch((error) => {
+        console.log("EMAIL ERROR:", error);
+        addToast("Failed to send message ❌");
+      })
+      .finally(() => {
+        setLoading(false);
       });
-
-      setErrors({});
-    }, 1500);
   };
 
   return (
@@ -123,9 +154,7 @@ function Contact() {
                 />
 
                 {errors.name && (
-                  <span className="absolute right-3 top-1/2 -translate-y-1/2 text-red-500">
-                    ⚠
-                  </span>
+                  <p className="text-red-500 text-sm mt-1">Name is required</p>
                 )}
               </div>
             </div>
@@ -152,9 +181,11 @@ function Contact() {
                 />
 
                 {errors.email && (
-                  <span className="absolute right-3 top-1/2 -translate-y-1/2 text-red-500">
-                    ⚠
-                  </span>
+                  <p className="text-red-500 text-sm mt-1">
+                    {errors.email === "required"
+                      ? "Email is required"
+                      : "Please enter a valid email"}
+                  </p>
                 )}
               </div>
             </div>
@@ -181,7 +212,9 @@ function Contact() {
                 />
 
                 {errors.message && (
-                  <span className="absolute right-3 top-3 text-red-500">⚠</span>
+                  <p className="text-red-500 text-sm mt-1">
+                    Message cannot be empty
+                  </p>
                 )}
               </div>
             </div>
@@ -193,7 +226,7 @@ function Contact() {
               className={`w-full py-2 rounded-lg font-medium transition ${
                 loading
                   ? "bg-gray-400 cursor-not-allowed"
-                  : "bg-blue-600 hover:bg-blue-700 text-white"
+                  : "bg-pink-500 hover:bg-pink-600 text-white"
               }`}
             >
               {loading ? "Sending..." : "Send Message"}

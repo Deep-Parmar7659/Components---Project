@@ -1,7 +1,7 @@
 // Data → Page → map() → UI
 // Data will stored in JSON format and dynamically render using map().
-import AuthTemplate from "../components/Templates/AuthTemplate";
-import DashboardTemplate from "../components/Templates/DashboardTemplate";
+import AuthTemplate from "../components/templates/AuthTemplate";
+import DashboardTemplate from "../components/templates/DashboardTemplate";
 import LandingTemplate from "../components/Templates/LandingTemplate";
 
 export const templatesData = [

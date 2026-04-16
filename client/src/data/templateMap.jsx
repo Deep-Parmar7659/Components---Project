@@ -1,4 +1,4 @@
-import LandingTemplate from "../components/templates/LandingTemplate";
+import LandingTemplate from "../components/Templates/LandingTemplate";
 import DashboardTemplate from "../components/templates/DashboardTemplate";
 import AuthTemplate from "../components/templates/AuthTemplate";
 
