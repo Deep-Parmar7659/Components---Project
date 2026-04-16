@@ -3,24 +3,54 @@ import React from "react";
 const benefitsData = [
   {
     id: 1,
-    title: "Save Time",
-    description: "Use ready-made components for rapid development.",
+    title: "Build Faster",
+    description:
+      "Skip repetitive UI work and launch your projects quickly with ready-made components.",
   },
   {
     id: 2,
-    title: "Dark/Light Mode",
-    description: "Seamless support for modern themes.",
+    title: "Save Development Time",
+    description:
+      "Reduce hours of coding by using pre-built UI elements and templates.",
   },
   {
     id: 3,
-    title: "Fully Responsive",
-    description: "Works on desktop, tablet, and mobile devices.",
+    title: "Focus on Core Logic",
+    description:
+      "Spend more time on functionality instead of designing UI from scratch.",
+  },
+  {
+    id: 4,
+    title: "Consistent Design",
+    description:
+      "Maintain a clean and uniform design across your entire application.",
+  },
+  {
+    id: 5,
+    title: "Easy to Use",
+    description:
+      "Simple and beginner-friendly structure makes development smooth.",
+  },
+  {
+    id: 6,
+    title: "Faster Project Delivery",
+    description:
+      "Complete your projects quickly and efficiently using reusable UI blocks.",
   },
 ];
 
 const BenefitsSection = () => {
   return (
-    <section className="py-20 bg-gray-50 dark:bg-gray-900">
+    <section id="benefits" className="py-26 bg-gray-50 dark:bg-gray-900">
+      <div className="text-center max-w-2xl mx-auto">
+        <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white">
+          Why Choose TailwindTap?
+        </h2>
+        <p className="py-2 mt-3 text-gray-500 dark:text-gray-400 text-sm md:text-base">
+          Discover powerful, ready-to-use components and templates to build
+          modern React applications faster and more efficiently.
+        </p>
+      </div>
       <div className="max-w-6xl mx-auto px-4 grid md:grid-cols-3 gap-6">
         {benefitsData.map((benefit) => (
           <div

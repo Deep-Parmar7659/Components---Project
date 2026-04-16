@@ -30,13 +30,15 @@ const useLoginForm = (setToast) => {
       setEmailError("");
     }
 
-    // Password Validation
+    const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,16}$/;
+
     if (!password) {
       setPasswordError("Password is required");
       valid = false;
-    } else if (password.length < 6) {
-      // Simple password regex pattern.
-      setPasswordError("Password must be at least 6 characters");
+    } else if (!passwordRegex.test(password)) {
+      setPasswordError(
+        "Password must be 8–16 chars with at least 1 letter and 1 number",
+      );
       valid = false;
     } else {
       setPasswordError("");

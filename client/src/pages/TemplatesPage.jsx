@@ -16,9 +16,11 @@ const TemplatesPage = () => {
       <AppContainer>
         {/* HEADER */}
         <div className="mb-6">
-          <h1 className="text-3xl font-semibold tracking-tight">Templates</h1>
+          <h1 className="text-4xl font-bold tracking-tight text-gray-900 dark:text-white">
+            Templates
+          </h1>
 
-          <p className="text-muted-foreground mt-2 text-sm">
+          <p className="mt-2 text-gray-500 dark:text-gray-400 text-sm">
             Ready-to-use templates for your React + Tailwind projects.
           </p>
         </div>
@@ -28,7 +30,7 @@ const TemplatesPage = () => {
 
         {/* GRID */}
         {filteredTemplates.length > 0 ? (
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-6">
             {filteredTemplates.map((template) => (
               <TemplateCard key={template.id} template={template} />
             ))}

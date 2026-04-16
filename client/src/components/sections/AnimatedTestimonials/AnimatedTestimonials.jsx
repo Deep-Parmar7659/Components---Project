@@ -8,13 +8,21 @@ export default function AnimatedTestimonials({ testimonials }) {
   const [active, setActive] = useState(0);
   // Add Autoplay Logic
   const [paused, setPaused] = useState(false);
+  // For Preload Image
   useEffect(() => {
-    if (!paused) {
-      const interval = setInterval(() => {
-        setActive((prev) => (prev + 1) % testimonials.length);
-      }, 5000); // change slide every 5 seconds
-      return () => clearInterval(interval);
-    }
+    testimonials.forEach((item) => {
+      const img = new Image();
+      img.src = item.src;
+    });
+  }, [testimonials]);
+  useEffect(() => {
+    if (paused || testimonials.length === 0) return;
+
+    const interval = setInterval(() => {
+      setActive((prev) => (prev + 1) % testimonials.length);
+    }, 5000);
+
+    return () => clearInterval(interval);
   }, [paused, testimonials.length]);
 
   // Next button logic
@@ -37,14 +45,12 @@ export default function AnimatedTestimonials({ testimonials }) {
       }
     };
     window.addEventListener("keydown", handleKeyDown);
-    return () => {
-      window.removeEventListener("keydown", handleKeyDown);
-    };
-  });
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [testimonials.length]);
 
   return (
     <div
-      className="max-w-6xl mx-auto py-20 px-6"
+      className="min-h-100 max-w-6xl mx-auto py-20 px-6 transform-gpu"
       // Mouse Hover :- Autoplay Pause
       onMouseEnter={() => setPaused(true)}
       // Mouse Leave :- Autoplay Resumes
@@ -61,6 +67,7 @@ export default function AnimatedTestimonials({ testimonials }) {
 
               return (
                 <motion.img
+                  loading="eager"
                   key={item.src}
                   src={item.src}
                   alt={item.name}
@@ -84,7 +91,7 @@ export default function AnimatedTestimonials({ testimonials }) {
                     rotate: 5,
                   }}
                   transition={{
-                    duration: 0.5,
+                    duration: 0.3,
                     ease: "easeInOut",
                   }}
                   // Swipe Detection:-
@@ -116,7 +123,7 @@ export default function AnimatedTestimonials({ testimonials }) {
             {/* Split the quote */}
             {testimonials[active].quote.split(" ").map((word, index) => (
               <motion.span
-                key={index}
+                key={index + active}
                 // opacity: 0 → 1 - fade in
                 // y: 10 → 0 - slide up
                 initial={{ opacity: 0, y: 10 }}
@@ -126,7 +133,7 @@ export default function AnimatedTestimonials({ testimonials }) {
                   // delay - stagger words
                   // duration - animation speed
                   delay: index * 0.05,
-                  duration: 0.3,
+                  duration: 0.4,
                 }}
                 className="mr-1"
               >
@@ -139,14 +146,28 @@ export default function AnimatedTestimonials({ testimonials }) {
           <div className="flex gap-4 mt-10">
             <button
               onClick={handlePrev}
-              className="p-2 rounded-full border border-(--card-border) bg-(--card-bg) text-(--text-primary) hover:bg-(--accent) hover:text-white transition"
+              className="
+                p-2 rounded-full
+                border border-gray-300 dark:border-gray-700
+              bg-white dark:bg-gray-900
+              text-gray-800 dark:text-gray-200
+              hover:bg-pink-500 hover:text-white
+                transition
+              "
             >
               ←
             </button>
 
             <button
               onClick={handleNext}
-              className="p-2 rounded-full border border-(--card-border) bg-(--card-bg) text-(--text-primary) hover:bg-(--accent) hover:text-white transition"
+              className="
+                p-2 rounded-full
+                border border-gray-300 dark:border-gray-700
+              bg-white dark:bg-gray-900
+              text-gray-800 dark:text-gray-200
+              hover:bg-pink-500 hover:text-white
+                transition
+              "
             >
               →
             </button>
@@ -163,7 +184,9 @@ export default function AnimatedTestimonials({ testimonials }) {
                 className={`h-2 w-2 rounded-full transition-all ${
                   // active === index:- Highlights current testimonial
                   // w-4 :-Active dot becomes wider
-                  active === index ? "bg-black w-4" : "bg-gray-400"
+                  active === index
+                    ? "bg-gray-900 dark:bg-white w-4"
+                    : "bg-gray-400"
                 }`}
               ></button>
             ))}

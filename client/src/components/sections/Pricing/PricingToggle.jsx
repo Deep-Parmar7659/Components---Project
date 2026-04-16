@@ -8,8 +8,8 @@ function PricingToggle({ billing, setBilling }) {
           className={`px-4 py-2 rounded-md text-sm font-medium transition
             ${
               billing === "monthly"
-                ? "bg-(--accent) text-white"
-                : "text-(--text-secondary) hover:text-(--text-primary)"
+                ? "bg-(--accent) dark:bg-(--accent) text-white"
+                : "text-black! dark:text-(--text-secondary)!"
             }`}
         >
           Monthly
@@ -20,8 +20,8 @@ function PricingToggle({ billing, setBilling }) {
           className={`px-4 py-2 rounded-md text-sm font-medium transition
             ${
               billing === "yearly"
-                ? "bg-(--accent) text-white"
-                : "text-(--text-secondary) hover:text-(--text-primary)"
+                ? "bg-(--accent) dark:bg-(--accent) text-white"
+                : "text-black! dark:text-(--text-secondary)!"
             }`}
         >
           Yearly

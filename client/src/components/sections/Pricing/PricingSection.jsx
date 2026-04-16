@@ -17,7 +17,7 @@ function PricingSection() {
   return (
     <Section>
       <section
-        className="py-20 relative overflow-hidden"
+        className="py-2 relative overflow-hidden"
         style={{
           background: isDark ? "" : "#f9fafb",
           transition: "background 0.3s ease",

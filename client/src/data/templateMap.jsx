@@ -6,18 +6,18 @@ export const templateMap = {
   "auth-template": {
     component: <AuthTemplate />,
     fileName: "AuthTemplate.jsx",
-    file: "/templates/auth-template.zip",
+    file: "/templates/auth-page.zip",
   },
 
   "dashboard-template": {
     component: <DashboardTemplate />,
     fileName: "DashboardTemplate.jsx",
-    file: "/templates/dashboard-template.zip",
+    file: "/templates/dashboard.zip",
   },
 
   "landing-template": {
     component: <LandingTemplate />,
     fileName: "LandingTemplate.jsx",
-    file: "/templates/landing-template.zip",
+    file: "/templates/landing-page.zip",
   },
 };
