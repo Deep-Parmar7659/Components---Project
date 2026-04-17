@@ -1,0 +1,37 @@
+body {
+  margin: 0;
+  font-family: Arial;
+  text-align: center;
+}
+
+.hero {
+  padding: 80px;
+  background: #f3f3f3;
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  padding: 60px;
+}
+
+.posts {
+  flex: 2;
+}
+
+.sidebar {
+  flex: 1;
+}
+
+.card {
+  padding: 20px;
+  border: 1px solid #ddd;
+  margin-bottom: 10px;
+}
+
+.newsletter {
+  padding: 60px;
+  background: #ec4899;
+  color: white;
+}
