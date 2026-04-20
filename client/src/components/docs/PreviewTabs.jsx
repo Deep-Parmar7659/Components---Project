@@ -1,58 +1,31 @@
 import { useState } from "react";
+import ResponsivePreview from "./ResponsivePreview";
 
-const PreviewTabs = ({ preview, code }) => {
-  const [activeTab, setActiveTab] = useState("preview");
-  const [screen, setScreen] = useState("desktop");
+const PreviewTabs = ({ preview }) => {
+  const [device, setDevice] = useState("laptop");
 
   return (
     <div className="w-full mt-6">
-      {/* Tabs Header */}
-      <div className="flex gap-6 border-b border-border">
-        <button
-          onClick={() => setActiveTab("preview")}
-          className={`pb-2 text-sm font-medium ${
-            activeTab === "preview"
-              ? "border-b-2 border-primary text-primary"
-              : "text-muted-foreground"
-          }`}
-        >
-          Preview
-        </button>
-
-        {/* <button
-          onClick={() => setActiveTab("code")}
-          className={`pb-2 text-sm font-medium ${
-            activeTab === "code"
-              ? "border-b-2 border-primary text-primary"
-              : "text-muted-foreground"
-          }`}
-        >
-          Code
-        </button> */}
+      {/* Device Toggle */}
+      <div className="flex justify-center gap-2 mb-4">
+        {["mobile", "tablet", "laptop"].map((d) => (
+          <button
+            key={d}
+            onClick={() => setDevice(d)}
+            className={`px-3 py-1 text-sm rounded-lg capitalize transition ${
+              device === d
+                ? "bg-primary text-white"
+                : "bg-gray-200 dark:bg-gray-700"
+            }`}
+          >
+            {d}
+          </button>
+        ))}
       </div>
 
-      {/* Content */}
-      <div className="mt-6 rounded-xl bg-muted/40 p-8">
-        {activeTab === "preview" ? (
-          <div className="flex justify-center items-center">
-            <div
-              className={`
-                transition-all duration-300
-                ${
-                  screen === "desktop"
-                    ? "w-full max-w-4xl"
-                    : screen === "tablet"
-                      ? "w-3xl"
-                      : "w-93.75"
-                }
-              `}
-            >
-              {preview}
-            </div>
-          </div>
-        ) : (
-          code
-        )}
+      {/* Preview */}
+      <div className="rounded-xl bg-muted/40 p-6">
+        <ResponsivePreview device={device}>{preview}</ResponsivePreview>
       </div>
     </div>
   );

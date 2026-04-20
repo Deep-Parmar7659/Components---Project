@@ -9,7 +9,6 @@ import CodeBlock from "../components/Docs/CodeBlock";
 import componentMap from "../data/componentMap";
 import PropsTable from "../components/Docs/PropsTable";
 
-import ResponsivePreview from "../components/Docs/ResponsivePreview";
 import { siteConfig } from "../config/siteConfig";
 const ComponentDetails = () => {
   const { componentName } = useParams();
@@ -43,18 +42,8 @@ const ComponentDetails = () => {
         {/* PREVIEW + CODE */}
         <div className="mt-8">
           <PreviewTabs
-            preview={<ResponsivePreview>{data.component}</ResponsivePreview>}
-            code={
-              <CodeBlock
-                code={
-                  siteConfig.showCode
-                    ? data.code
-                    : "// Empty this code section!"
-                }
-                fileName={data.fileName}
-                hideCode={!siteConfig.showCode}
-              />
-            }
+            preview={data.component && <data.component />}
+            code={data.code}
           />
         </div>
 
