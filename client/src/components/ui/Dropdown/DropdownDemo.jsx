@@ -5,7 +5,7 @@ import DropdownItem from "./DropdownItem";
 
 function DropdownDemo() {
   return (
-    <div className="flex justify-center mt-20">
+    <div className="flex justify-center mt-35">
       <Dropdown>
         <DropdownTrigger>Open Menu</DropdownTrigger>
         <DropdownMenu>

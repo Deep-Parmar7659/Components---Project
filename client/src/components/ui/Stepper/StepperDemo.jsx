@@ -1,13 +1,13 @@
 import { useState } from "react";
 import Stepper from "./Stepper";
 
-const StepperDemo = () => {
+const StepperDemo = ({ device }) => {
   const steps = ["Login", "Shipping", "Payment", "Done"];
   const [currentStep, setCurrentStep] = useState(1);
 
   return (
-    <div className="flex flex-col gap-6">
-      <Stepper steps={steps} currentStep={currentStep} />
+    <div className="flex gap-6 flex-col">
+      <Stepper steps={steps} currentStep={currentStep} device={device} />
 
       <div className="flex gap-3">
         <button

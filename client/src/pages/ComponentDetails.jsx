@@ -12,13 +12,14 @@ import PropsTable from "../components/Docs/PropsTable";
 import { siteConfig } from "../config/siteConfig";
 const ComponentDetails = () => {
   const { componentName } = useParams();
-
   const data = componentMap[componentName];
 
   // SAFETY CHECK
   if (!data) {
     return <div className="p-8 text-red-500">Component not found 😅</div>;
   }
+
+  const Preview = data.component;
 
   return (
     <div className="min-h-screen bg-background">
@@ -41,10 +42,7 @@ const ComponentDetails = () => {
 
         {/* PREVIEW + CODE */}
         <div className="mt-8">
-          <PreviewTabs
-            preview={data.component && <data.component />}
-            code={data.code}
-          />
+          <PreviewTabs preview={data.component} code={data.code} />
         </div>
 
         {/* PROPS SECTION */}

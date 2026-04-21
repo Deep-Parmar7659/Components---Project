@@ -17,6 +17,7 @@ export const templatesData = [
     slug: "auth-template",
     component: "AuthTemplate",
     file: "/templates/auth-template.zip",
+    preview: "/previews/Auth.png",
   },
   {
     id: 2,
@@ -24,6 +25,7 @@ export const templatesData = [
     slug: "dashboard-template",
     component: "DashboardTemplate",
     file: "/templates/dashboard-template.zip",
+    preview: "/previews/Dashboard.png",
   },
   {
     id: 3,
@@ -31,6 +33,7 @@ export const templatesData = [
     slug: "landing-template",
     component: "LandingTemplate",
     file: "/templates/landing-template.zip",
+    preview: "/previews/Landing.png",
   },
   {
     id: 4,
@@ -38,6 +41,7 @@ export const templatesData = [
     slug: "saas-template",
     component: "SaaSTemplate",
     file: "/templates/saas-template.zip",
+    preview: "/previews/SaaS.png",
   },
   {
     id: 5,
@@ -45,6 +49,7 @@ export const templatesData = [
     slug: "portfolio-template",
     component: "PortfolioTemplate",
     file: "/templates/portfolio-template.zip",
+    preview: "/previews/Portfolio.png",
   },
   {
     id: 6,
@@ -52,6 +57,7 @@ export const templatesData = [
     slug: "ecommerce-template",
     component: "EcommerceTemplate",
     file: "/templates/ecommerce-template.zip",
+    preview: "/previews/ECommerce.png",
   },
   {
     id: 7,
@@ -59,6 +65,7 @@ export const templatesData = [
     slug: "blog-template",
     component: "BlogTemplate",
     file: "/templates/blog-template.zip",
+    preview: "/previews/Blog.png",
   },
   {
     id: 8,
@@ -66,6 +73,7 @@ export const templatesData = [
     slug: "admin-dashboard-template",
     component: "AdminDashboardTemplate",
     file: "/templates/admin-dashboard-template.zip",
+    preview: "/previews/Admin.png",
   },
   {
     id: 9,
@@ -73,5 +81,6 @@ export const templatesData = [
     slug: "startup-template",
     component: "StartupTemplate",
     file: "/templates/startup-template.zip",
+    preview: "/previews/Startup.png",
   },
 ];

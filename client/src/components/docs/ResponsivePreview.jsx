@@ -1,3 +1,5 @@
+import { cloneElement } from "react";
+
 const ResponsivePreview = ({ children, device }) => {
   const getWidth = () => {
     if (device === "mobile") return "375px";
@@ -14,7 +16,7 @@ const ResponsivePreview = ({ children, device }) => {
           maxWidth: "100%",
         }}
       >
-        {children}
+        <div className="w-full p-4">{cloneElement(children, { device })}</div>
       </div>
     </div>
   );

@@ -14,8 +14,8 @@ const PreviewTabs = ({ preview }) => {
             onClick={() => setDevice(d)}
             className={`px-3 py-1 text-sm rounded-lg capitalize transition ${
               device === d
-                ? "bg-primary text-white"
-                : "bg-gray-200 dark:bg-gray-700"
+                ? "bg-pink-500 text-white"
+                : "bg-gray-300 text-gray-600 dark:bg-gray-600"
             }`}
           >
             {d}

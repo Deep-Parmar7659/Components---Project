@@ -4,7 +4,7 @@ import PopoverContent from "./PopoverContent";
 
 function PopoverDemo() {
   return (
-    <div className="p-2 flex justify-center">
+    <div className="p-2 flex justify-center mt-50">
       <div className="relative">
         <Popover>
           <PopoverTrigger>Open Popover</PopoverTrigger>
