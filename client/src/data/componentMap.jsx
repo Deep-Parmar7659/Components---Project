@@ -1,7 +1,5 @@
 // ===== BASIC =====
 import AccordionDemo from "../components/ui/Accordion/Examples/AccordionDemo";
-import AccordionCode from "../components/ui/Accordion/Examples/AccordionDemo.jsx?raw";
-
 import AccordionFAQ from "../components/ui/Accordion/Examples/AccordionFAQ";
 import AccordionFAQCode from "../components/ui/Accordion/Examples/AccordionFAQ.jsx?raw";
 
