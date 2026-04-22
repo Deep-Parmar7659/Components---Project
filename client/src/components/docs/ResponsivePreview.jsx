@@ -6,11 +6,11 @@ const ResponsivePreview = ({ children, device }) => {
     if (device === "tablet") return "768px";
     return "100%"; // laptop
   };
-
+  // border rounded-xl
   return (
     <div className="w-full flex justify-center">
       <div
-        className="border rounded-xl overflow-hidden shadow-sm transition-all duration-300"
+        className="overflow-hidden shadow-sm transition-all duration-300"
         style={{
           width: getWidth(),
           maxWidth: "100%",
