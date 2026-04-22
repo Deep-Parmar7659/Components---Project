@@ -6,9 +6,9 @@ const ResponsivePreview = ({ children, device }) => {
     if (device === "tablet") return "768px";
     return "100%"; // laptop
   };
-  // border rounded-xl
+
   return (
-    <div className="w-full flex justify-center">
+    <div className="border rounded-xl w-full flex justify-center">
       <div
         className="overflow-hidden shadow-sm transition-all duration-300"
         style={{

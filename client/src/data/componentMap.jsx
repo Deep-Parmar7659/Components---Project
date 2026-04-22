@@ -1,119 +1,64 @@
+import { getFilesByComponent } from "../utils/loadCodeFiles";
+
 // ===== BASIC =====
 import AccordionDemo from "../components/ui/Accordion/Examples/AccordionDemo";
 import AccordionFAQ from "../components/ui/Accordion/Examples/AccordionFAQ";
-import AccordionFAQCode from "../components/ui/Accordion/Examples/AccordionFAQ.jsx?raw";
-
 import TabsDemo from "../components/ui/Tabs/TabsDemo";
-import TabsDemoCode from "../components/ui/Tabs/TabsDemo.jsx?raw";
-
 import Input from "../components/ui/Input";
-import InputCode from "../components/ui/Input.jsx?raw";
-
 import Button from "../components/ui/Button";
-import ButtonCode from "../components/ui/Button.jsx?raw";
-
 import BadgeDemo from "../components/ui/Badge/BadgeDemo";
-import BadgeDemoCode from "../components/ui/Badge/BadgeDemo.jsx?raw";
-
 import AvatarDemo from "../components/ui/Avatar/AvatarDemo";
-import AvatarDemoCode from "../components/ui/Avatar/AvatarDemo.jsx?raw";
-
 import SpinnerDemo from "../components/ui/Spinner/SpinnerDemo";
-import SpinnerDemoCode from "../components/ui/Spinner/SpinnerDemo.jsx?raw";
-
 import CheckboxDemo from "../components/ui/Checkbox/CheckboxDemo";
-import CheckboxDemoCode from "../components/ui/Checkbox/CheckboxDemo.jsx?raw";
-
 import RadioDemo from "../components/ui/Radio/RadioDemo";
-import RadioDemoCode from "../components/ui/Radio/RadioDemo.jsx?raw";
-
 import SwitchDemo from "../components/ui/Switch/SwitchDemo";
-import SwitchDemoCode from "../components/ui/Switch/SwitchDemo.jsx?raw";
 
 // ===== ADVANCED =====
 import ModalDemo from "../components/ui/Modal/ModalDemo";
-import ModalCode from "../components/ui/Modal/ModalDemo.jsx?raw";
-
 import SheetDemo from "../components/ui/Sheet/SheetDemo";
-import SheetDemoCode from "../components/ui/Sheet/SheetDemo.jsx?raw";
-
 import DropdownDemo from "../components/ui/Dropdown/DropdownDemo";
-import DropdownDemoCode from "../components/ui/Dropdown/DropdownDemo.jsx?raw";
-
 import TooltipDemo from "../components/ui/Tooltip/TooltipDemo";
-import TooltipDemoCode from "../components/ui/Tooltip/TooltipDemo.jsx?raw";
-
 import PopoverDemo from "../components/ui/Popover/PopoverDemo";
-import PopoverDemoCode from "../components/ui/Popover/PopoverDemo.jsx?raw";
-
 import PaginationDemo from "../components/ui/Pagination/PaginationDemo";
-import PaginationDemoCode from "../components/ui/Pagination/PaginationDemo.jsx?raw";
-
 import DataTableDemo from "../components/ui/DataTable/DataTableDemo";
-import DataTableDemoCode from "../components/ui/DataTable/DataTableDemo.jsx?raw";
-
 import ToastDemo from "../components/ui/Toast/ToastDemo";
-import ToastDemoCode from "../components/ui/Toast/ToastDemo.jsx?raw";
-
 import SkeletonDemo from "../components/ui/Skeleton/SkeletonDemo";
-import SkeletonDemoCode from "../components/ui/Skeleton/SkeletonDemo.jsx?raw";
-
 import CommandDemo from "../components/ui/Command/CommandDemo";
-import CommandDemoCode from "../components/ui/Command/CommandDemo.jsx?raw";
-
 import AlertDemo from "../components/ui/Alert/AlertDemo";
-import AlertDemoCode from "../components/ui/Alert/AlertDemo.jsx?raw";
-
 import StepperDemo from "../components/ui/Stepper/StepperDemo";
-import StepperDemoCode from "../components/ui/Stepper/StepperDemo.jsx?raw";
 
 // ===== UI =====
 import GlowCard from "../components/ui/GlowCard/GlowCard";
-import GlowCardCode from "../components/ui/GlowCard/GlowCard.jsx?raw";
-
 import GlassCard from "../Components/ui/GlassCard";
-import GlassCardCode from "../components/ui/GlassCard.jsx?raw";
-
 import Container from "../Components/ui/Container";
-import ContainerCode from "../components/ui/Container.jsx?raw";
-
 import Section from "../Components/ui/Section";
-import SectionCode from "../components/ui/Section.jsx?raw";
-
 import CardDemo from "../components/ui/Card/CardDemo";
-import CardDemoCode from "../components/ui/Card/CardDemo.jsx?raw";
-
 import NavbarDemo from "../components/ui/Navbar/NavbarDemo";
-import NavbarDemoCode from "../components/ui/Navbar/NavbarDemo.jsx?raw";
 
 // ===== COMPONENT MAP =====
 const componentMap = {
   // Basic Component
   accordion: {
     component: <AccordionDemo />,
-    code: AccordionCode,
-    fileName: "AccordionDemo.jsx",
+    codeFiles: getFilesByComponent("Accordion"),
     description:
       "Accordion component is used to show and hide content sections. It helps organize large content into collapsible panels for better readability.",
   },
   "accordion-faq": {
     component: <AccordionFAQ />,
-    code: AccordionFAQCode,
-    fileName: "AccordionFAQ.jsx",
+    codeFiles: getFilesByComponent("AccordionFAQ"),
     description:
       "Accordion FAQ is a variation of accordion used for frequently asked questions. It allows users to expand and read answers easily.",
   },
   tabs: {
     component: <TabsDemo />,
-    code: TabsDemoCode,
-    fileName: "TabsDemo.jsx",
+    codeFiles: getFilesByComponent("Tabs"),
     description:
       "Tabs component is used to switch between multiple views or sections within the same page. It improves navigation and content organization.",
   },
   button: {
     component: <Button>Click Me</Button>,
-    code: ButtonCode,
-    fileName: "Button.jsx",
+    codeFiles: getFilesByComponent("Button"),
     description:
       "Button component is used to trigger actions such as submitting forms, navigating pages, or executing events. It helps create consistent and reusable interactive elements across the application.",
     props: [
@@ -136,8 +81,7 @@ const componentMap = {
   },
   input: {
     component: <Input placeholder="Enter text..." />,
-    code: InputCode,
-    fileName: "Input.jsx",
+    codeFiles: getFilesByComponent("Input"),
     description:
       "Input component is used to collect user data such as text, email, or passwords. It is commonly used in forms and helps standardize user input handling.",
     props: [
@@ -160,8 +104,7 @@ const componentMap = {
   },
   badge: {
     component: <BadgeDemo />,
-    code: BadgeDemoCode,
-    fileName: "BadgeDemo.jsx",
+    codeFiles: getFilesByComponent("Badge"),
     description:
       "Badge component is used to display small status labels or counts such as notifications, tags, or categories.",
     props: [
@@ -179,8 +122,7 @@ const componentMap = {
   },
   avatar: {
     component: <AvatarDemo />,
-    code: AvatarDemoCode,
-    fileName: "AvatarDemo.jsx",
+    codeFiles: getFilesByComponent("Avatar"),
     description:
       "Avatar component is used to display user profile images or initials. It is commonly used in user interfaces like chats and dashboards.",
     props: [
@@ -203,29 +145,25 @@ const componentMap = {
   },
   spinner: {
     component: <SpinnerDemo />,
-    code: SpinnerDemoCode,
-    fileName: "SpinnerDemo.jsx",
+    codeFiles: getFilesByComponent("Spinner"),
     description:
       "Spinner component is used to indicate loading states. It shows that content is being fetched or processed.",
   },
   checkbox: {
     component: <CheckboxDemo />,
-    code: CheckboxDemoCode,
-    fileName: "CheckboxDemo.jsx",
+    codeFiles: getFilesByComponent("Checkbox"),
     description:
       "Checkbox component is used to select one or multiple options from a list. It is commonly used in forms.",
   },
   radio: {
     component: <RadioDemo />,
-    code: RadioDemoCode,
-    fileName: "RadioDemo.jsx",
+    codeFiles: getFilesByComponent("Radio"),
     description:
       "Radio component is used to select only one option from multiple choices. It ensures a single selection.",
   },
   switch: {
     component: <SwitchDemo />,
-    code: SwitchDemoCode,
-    fileName: "SwitchDemo.jsx",
+    codeFiles: getFilesByComponent("Switch"),
     description:
       "Switch component is used to toggle between two states such as on/off or enable/disable.",
   },
@@ -233,8 +171,7 @@ const componentMap = {
   // Advanced Components
   modal: {
     component: <ModalDemo />,
-    code: ModalCode,
-    fileName: "ModalDemo.jsx",
+    codeFiles: getFilesByComponent("Modal"),
     description:
       "Modal component is used to display content in a popup overlay. It is commonly used for forms, alerts, or confirmations.",
     props: [
@@ -252,57 +189,50 @@ const componentMap = {
   },
   sheet: {
     component: <SheetDemo />,
-    code: SheetDemoCode,
-    fileName: "SheetDemo.jsx",
+    codeFiles: getFilesByComponent("Sheet"),
     description:
       "Sheet component is a side panel that slides into view. It is used for navigation menus or additional content.",
   },
   dropdown: {
     component: <DropdownDemo />,
-    code: DropdownDemoCode,
-    fileName: "DropdownDemo.jsx",
+    codeFiles: getFilesByComponent("Dropdown"),
     description:
       "Dropdown component is used to display a list of options when triggered. It helps save space and organize actions.",
   },
   tooltip: {
     component: <TooltipDemo />,
-    code: TooltipDemoCode,
-    fileName: "TooltipDemo.jsx",
+    codeFiles: getFilesByComponent("Tooltip"),
     description:
       "Tooltip component shows small informational text when hovering over an element. It improves user guidance.",
   },
   popover: {
     component: <PopoverDemo />,
-    code: PopoverDemoCode,
-    fileName: "PopoverDemo.jsx",
+    codeFiles: getFilesByComponent("Popover"),
     description:
       "Popover component displays additional content in a floating panel. It is used for actions, forms, or extra information.",
   },
   pagination: {
     component: <PaginationDemo />,
-    code: PaginationDemoCode,
-    fileName: "PaginationDemo.jsx",
+    codeFiles: getFilesByComponent("Pagination"),
     description:
       "Pagination component is used to divide content into multiple pages. It helps manage large datasets efficiently.",
   },
   skeleton: {
     component: <SkeletonDemo />,
-    code: SkeletonDemoCode,
-    fileName: "SkeletonDemo.jsx",
+    codeFiles: getFilesByComponent("Skeleton"),
     description:
       "Skeleton component is used as a placeholder while content is loading. It improves perceived performance.",
   },
   command: {
     component: <CommandDemo />,
-    code: CommandDemoCode,
-    fileName: "CommandDemo.jsx",
+    codeFiles: getFilesByComponent("Command"),
+
     description:
       "Command component provides a searchable command menu. It helps users quickly navigate or execute actions.",
   },
   datatable: {
     component: <DataTableDemo />,
-    code: DataTableDemoCode,
-    fileName: "DataTableDemo.jsx",
+    codeFiles: getFilesByComponent("DataTable"),
     description:
       "DataTable component is used to display structured data in rows and columns. It supports sorting, filtering, and better data management.",
     props: [
@@ -325,8 +255,7 @@ const componentMap = {
   },
   toast: {
     component: <ToastDemo />,
-    code: ToastDemoCode,
-    fileName: "ToastDemo.jsx",
+    codeFiles: getFilesByComponent("Toast"),
     description:
       "Toast component is used to display temporary notifications such as success or error messages. It appears briefly and disappears automatically.",
     props: [
@@ -349,8 +278,7 @@ const componentMap = {
   },
   alert: {
     component: <AlertDemo />,
-    code: AlertDemoCode,
-    fileName: "AlertDemo.jsx",
+    codeFiles: getFilesByComponent("Alert"),
     description:
       "Alert component is used to display important messages like success, error, or warning. It helps users quickly understand system feedback.",
     props: [
@@ -368,8 +296,7 @@ const componentMap = {
   },
   stepper: {
     component: <StepperDemo />,
-    code: StepperDemoCode,
-    fileName: "StepperDemo.jsx",
+    codeFiles: getFilesByComponent("Stepper"),
     description:
       "Stepper component is used to show progress through multiple steps in processes like forms or checkout. It helps users understand their current position and remaining steps.",
     props: [
@@ -393,8 +320,7 @@ const componentMap = {
         <div className="p-6 text-white">GlowCard Preview</div>
       </GlowCard>
     ),
-    code: GlowCardCode,
-    fileName: "GlowCard.jsx",
+    codeFiles: getFilesByComponent("GlowCard"),
     description:
       "GlowCard component is used to highlight content with a glowing visual effect. It enhances UI appearance and focus.",
   },
@@ -402,8 +328,7 @@ const componentMap = {
     component: (
       <GlassCard className="p-6 text-white">GlassCard Preview</GlassCard>
     ),
-    code: GlassCardCode,
-    fileName: "GlassCard.jsx",
+    codeFiles: getFilesByComponent("GlassCard"),
     description:
       "GlassCard component uses a glassmorphism design style with blur and transparency. It creates a modern UI look.",
   },
@@ -415,8 +340,7 @@ const componentMap = {
         </Container>
       </div>
     ),
-    code: ContainerCode,
-    fileName: "Container.jsx",
+    codeFiles: getFilesByComponent("Container"),
     description:
       "Container component is used to wrap and align content within a fixed width. It helps maintain layout consistency.",
   },
@@ -428,24 +352,19 @@ const componentMap = {
         </Section>
       </div>
     ),
-    code: SectionCode,
-    fileName: "Section.jsx",
+    codeFiles: getFilesByComponent("Section"),
     description:
       "Section component is used to divide a page into different content blocks. It improves layout structure and readability.",
   },
   card: {
     component: <CardDemo />,
-    code: CardDemoCode,
-    fileName: "CardDemo.jsx",
-
+    codeFiles: getFilesByComponent("Card"),
     description:
       "Card component is used to group related content in a structured container. It is commonly used in dashboards, product listings, and layouts.",
   },
   navbar: {
     component: <NavbarDemo />,
-    code: NavbarDemoCode,
-    fileName: "NavbarDemo.jsx",
-
+    codeFiles: getFilesByComponent("Navbar"),
     description:
       "Navbar component is used for navigation across different sections of the application. It improves accessibility and user experience.",
 

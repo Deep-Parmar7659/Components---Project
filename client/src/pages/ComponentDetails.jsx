@@ -42,7 +42,7 @@ const ComponentDetails = () => {
 
         {/* PREVIEW + CODE */}
         <div className="mt-8">
-          <PreviewTabs preview={data.component} code={data.code} />
+          <PreviewTabs preview={data.component} codeFiles={data.codeFiles} />
         </div>
 
         {/* PROPS SECTION */}

@@ -1,52 +1,26 @@
-import {
-  canCopy,
-  increaseCopyCount,
-  getRemainingCopies,
-} from "../../Utils/copyLimit";
-
-import { useToast } from "../ui/Toast/useToast";
-
-const CodeBlock = ({ code, fileName, hideCode = false }) => {
-  const { addToast } = useToast();
-
+const CodeBlock = ({ code, fileName }) => {
   const handleCopy = () => {
-    if (!canCopy()) {
-      addToast("Copy limit reached for today", "error");
-      return;
-    }
-
     navigator.clipboard.writeText(code);
-
-    increaseCopyCount();
-
-    addToast(`Copied! Remaining: ${getRemainingCopies()}`, "success");
   };
 
   return (
-    <div className="relative">
-      {/* Top Bar */}
-      <div className="flex justify-between items-center px-4 py-2 bg-gray-100 dark:bg-gray-800 rounded-t-xl border">
-        <span className="text-sm text-gray-600 dark:text-gray-300">
-          {fileName || "Component.jsx"}
-        </span>
+    <div className="relative p-4 text-sm text-gray-200">
+      {/* Header */}
+      <div className="flex justify-between items-center mb-2">
+        <span className="text-gray-400">{fileName}</span>
 
         <button
           onClick={handleCopy}
-          className="text-xs px-3 py-1 rounded-md bg-black text-white hover:bg-gray-700"
+          className="bg-blue-500 hover:bg-blue-600 text-white px-3 py-1 rounded text-xs"
         >
           Copy
         </button>
       </div>
 
-      {/* Code Block */}
-      <pre className="overflow-x-auto rounded-b-xl p-4 text-sm bg-black text-white">
+      {/* Code */}
+      <pre className="overflow-x-auto">
         <code>{code}</code>
       </pre>
-
-      {/* Remaining Count */}
-      <p className="text-xs text-gray-500 mt-2">
-        Remaining copies today: {getRemainingCopies()}
-      </p>
     </div>
   );
 };

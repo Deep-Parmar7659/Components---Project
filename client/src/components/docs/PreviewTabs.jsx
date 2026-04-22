@@ -1,7 +1,8 @@
 import { useState } from "react";
 import ResponsivePreview from "./ResponsivePreview";
+import CodeTabs from "./CodeTabs";
 
-const PreviewTabs = ({ preview }) => {
+const PreviewTabs = ({ preview, codeFiles }) => {
   const [device, setDevice] = useState("laptop");
 
   return (
@@ -27,6 +28,9 @@ const PreviewTabs = ({ preview }) => {
       <div className="rounded-xl bg-muted/40 p-6">
         <ResponsivePreview device={device}>{preview}</ResponsivePreview>
       </div>
+
+      {/* ✅ ADD THIS (Code Section) */}
+      <CodeTabs codeFiles={codeFiles} />
     </div>
   );
 };
