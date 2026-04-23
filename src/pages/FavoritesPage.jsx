@@ -1,5 +1,5 @@
 import AppContainer from "../components/ui/AppContainer";
-import useFavorites from "../Hooks/useFavorites";
+import useFavorites from "../hooks/useFavorites";
 import { Link } from "react-router-dom";
 
 const FavoritesPage = () => {
