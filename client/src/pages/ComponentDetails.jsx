@@ -4,12 +4,8 @@ import FavoriteButton from "../components/ui/FavoriteButton";
 
 // Docs UI
 import PreviewTabs from "../components/Docs/PreviewTabs";
-import CodeBlock from "../components/Docs/CodeBlock";
-
 import componentMap from "../data/componentMap";
-import PropsTable from "../components/Docs/PropsTable";
 
-import { siteConfig } from "../config/siteConfig";
 const ComponentDetails = () => {
   const { componentName } = useParams();
   const data = componentMap[componentName];
@@ -43,12 +39,6 @@ const ComponentDetails = () => {
         {/* PREVIEW + CODE */}
         <div className="mt-8">
           <PreviewTabs preview={data.component} codeFiles={data.codeFiles} />
-        </div>
-
-        {/* PROPS SECTION */}
-        <div className="mt-10">
-          <h2 className="text-2xl font-semibold mb-4">Props</h2>
-          <PropsTable propsData={data.props} />
         </div>
       </AppContainer>
     </div>

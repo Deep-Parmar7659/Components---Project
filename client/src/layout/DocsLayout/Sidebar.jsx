@@ -20,7 +20,7 @@ const Sidebar = () => {
   const formatPath = (name) => name.toLowerCase().replace(/\s+/g, "-");
 
   return (
-    <div className="w-64 h-screen overflow-y-auto border-r dark:border-gray-800 p-4">
+    <div className="w-64 h-screen overflow-y-auto bg-white dark:bg-gray-900 p-4">
       <h2 className="text-xl font-bold mb-6">Components</h2>
 
       {/* FAVORITES */}

@@ -1,8 +1,6 @@
 import { useParams } from "react-router-dom";
 import AppContainer from "../components/ui/AppContainer";
 import PreviewTabs from "../components/Docs/PreviewTabs";
-import ResponsivePreview from "../components/Docs/ResponsivePreview"; // ✅ FIXED
-
 import { templateMap } from "../Data/templateMap";
 
 const TemplateDetails = () => {
@@ -43,9 +41,7 @@ const TemplateDetails = () => {
           </button>
         </div>
 
-        <PreviewTabs
-          preview={<ResponsivePreview>{data.component}</ResponsivePreview>}
-        />
+        <PreviewTabs preview={data.component} codeFiles={[]} />
       </AppContainer>
     </div>
   );

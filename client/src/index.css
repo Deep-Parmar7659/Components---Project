@@ -48,3 +48,9 @@
 .animate-fadeUp {
   animation: fadeIn 0.6s ease;
 }
+
+button,
+a,
+[role="button"] {
+  cursor: pointer;
+}

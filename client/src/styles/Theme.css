@@ -28,6 +28,12 @@
   --text-secondary: #9ca3af;
 
   --accent: #ec4899;
+
+  --code-bg: #0d1117;
+  --code-text: #e6edf3;
+  --code-border: #30363d;
+  --code-tab-active: #21262d;
+  --code-tab-text: #ffffff;
 }
 
 /* Light Mode */
@@ -42,6 +48,12 @@
   --text-secondary: #475569;
 
   --accent: #ec4899;
+
+  --code-bg: #f6f8fa;
+  --code-text: #24292f;
+  --code-border: #d0d7de;
+  --code-tab-active: #64707d;
+  --code-tab-text: #000000;
 }
 
 /* =========================
