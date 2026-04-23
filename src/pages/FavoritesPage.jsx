@@ -13,7 +13,7 @@ const FavoritesPage = () => {
         {favorites.length === 0 ? (
           <p className="text-muted-foreground">No favorite components yet 😅</p>
         ) : (
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
             {favorites.map((item) => (
               <Link
                 key={item}

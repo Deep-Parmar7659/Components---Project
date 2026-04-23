@@ -9,7 +9,7 @@ const CTASection = () => {
   return (
     <Section>
       <section className="text-center dark:bg-gray-900">
-        <h2 className="text-3xl font-bold mb-6">
+        <h2 className="text-2xl sm:text-3xl font-bold mb-6">
           Start building amazing UIs today!
         </h2>
 

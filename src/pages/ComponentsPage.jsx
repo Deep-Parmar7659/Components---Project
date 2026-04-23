@@ -6,6 +6,7 @@ const ComponentsPage = () => {
   const [searchInput, setSearchInput] = useState("");
   const [search, setSearch] = useState("");
   const [filter, setFilter] = useState("All");
+  const [sidebarOpen, setSidebarOpen] = useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -27,113 +28,154 @@ const ComponentsPage = () => {
     );
   });
 
+  const handleCategorySelect = (cat) => {
+    setFilter(cat);
+    setSidebarOpen(false);
+  };
+
+  const SidebarContent = () => (
+    <>
+      {/* Search */}
+      <div className="relative mb-6">
+        <input
+          type="text"
+          placeholder="Search Components"
+          value={searchInput}
+          onChange={(e) => setSearchInput(e.target.value)}
+          style={{
+            background: "var(--card-bg)",
+            border: "1px solid var(--card-border)",
+            color: "var(--text-primary)",
+          }}
+          className="w-full px-4 py-2.5 pr-10 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-pink-500"
+        />
+        <span
+          className="absolute right-3 top-1/2 -translate-y-1/2 text-sm"
+          style={{ color: "var(--text-secondary)" }}
+        >
+          🔍
+        </span>
+      </div>
+
+      {/* Category List */}
+      <nav className="space-y-1">
+        {categories.map((cat) => (
+          <button
+            key={cat}
+            onClick={() => handleCategorySelect(cat)}
+            className="w-full flex items-center justify-between px-4 py-2.5 rounded-xl text-sm transition-all"
+            style={
+              filter === cat
+                ? { background: "var(--accent)", color: "#ffffff", fontWeight: 500 }
+                : { color: "var(--text-secondary)", background: "transparent" }
+            }
+            onMouseEnter={(e) => {
+              if (filter !== cat) {
+                e.currentTarget.style.background = "var(--card-bg)";
+                e.currentTarget.style.color = "var(--text-primary)";
+              }
+            }}
+            onMouseLeave={(e) => {
+              if (filter !== cat) {
+                e.currentTarget.style.background = "transparent";
+                e.currentTarget.style.color = "var(--text-secondary)";
+              }
+            }}
+          >
+            <span>{cat}</span>
+            <span
+              className="text-xs px-2 py-0.5 rounded-full"
+              style={
+                filter === cat
+                  ? { background: "rgba(255,255,255,0.2)", color: "#ffffff" }
+                  : { background: "var(--card-border)", color: "var(--text-secondary)" }
+              }
+            >
+              {getCategoryCount(cat)}
+            </span>
+          </button>
+        ))}
+      </nav>
+    </>
+  );
+
   return (
     <div
       className="min-h-screen flex"
       style={{ background: "var(--bg-main)", color: "var(--text-primary)" }}
     >
-      {/* ===== LEFT SIDEBAR ===== */}
+      {/* ===== DESKTOP SIDEBAR ===== */}
       <aside
-        className="w-64 min-h-screen p-5 shrink-0 sticky top-0 h-screen overflow-y-auto"
+        className="hidden md:block w-64 min-h-screen p-5 shrink-0 sticky top-0 h-screen overflow-y-auto"
         style={{
           background: "var(--bg-secondary)",
           borderRight: "1px solid var(--card-border)",
         }}
       >
-        {/* Search */}
-        <div className="relative mb-6">
-          <input
-            type="text"
-            placeholder="Search Components"
-            value={searchInput}
-            onChange={(e) => setSearchInput(e.target.value)}
+        <SidebarContent />
+      </aside>
+
+      {/* ===== MOBILE SIDEBAR OVERLAY ===== */}
+      {sidebarOpen && (
+        <div
+          className="md:hidden fixed inset-0 z-40 bg-black/50"
+          onClick={() => setSidebarOpen(false)}
+        />
+      )}
+      <aside
+        className={`md:hidden fixed top-0 left-0 z-50 h-full w-72 p-5 overflow-y-auto transition-transform duration-300 ${
+          sidebarOpen ? "translate-x-0" : "-translate-x-full"
+        }`}
+        style={{
+          background: "var(--bg-secondary)",
+          borderRight: "1px solid var(--card-border)",
+        }}
+      >
+        <div className="flex items-center justify-between mb-4">
+          <h2 className="font-bold text-lg">Filter</h2>
+          <button
+            onClick={() => setSidebarOpen(false)}
+            className="text-xl leading-none"
+            style={{ color: "var(--text-secondary)" }}
+          >
+            ✕
+          </button>
+        </div>
+        <SidebarContent />
+      </aside>
+
+      {/* ===== RIGHT CONTENT ===== */}
+      <main className="flex-1 p-4 sm:p-6 md:p-8 min-w-0">
+        {/* Header */}
+        <div className="mb-6 sm:mb-8 flex items-center justify-between gap-4">
+          <div>
+            <h1
+              className="text-2xl sm:text-3xl font-bold"
+              style={{ color: "var(--text-primary)" }}
+            >
+              {filter === "All" ? "All Components" : `${filter} Components`}
+            </h1>
+            <p className="text-sm mt-1" style={{ color: "var(--text-secondary)" }}>
+              {filtered.length} components found
+            </p>
+          </div>
+          {/* Mobile filter button */}
+          <button
+            onClick={() => setSidebarOpen(true)}
+            className="md:hidden px-4 py-2 rounded-xl text-sm font-medium flex-shrink-0"
             style={{
               background: "var(--card-bg)",
               border: "1px solid var(--card-border)",
               color: "var(--text-primary)",
             }}
-            className="w-full px-4 py-2.5 pr-10 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-pink-500"
-          />
-          <span
-            className="absolute right-3 top-1/2 -translate-y-1/2 text-sm"
-            style={{ color: "var(--text-secondary)" }}
           >
-            🔍
-          </span>
-        </div>
-
-        {/* Category List */}
-        <nav className="space-y-1">
-          {categories.map((cat) => (
-            <button
-              key={cat}
-              onClick={() => setFilter(cat)}
-              className="w-full flex items-center justify-between px-4 py-2.5 rounded-xl text-sm transition-all"
-              style={
-                filter === cat
-                  ? {
-                      background: "var(--accent)",
-                      color: "#ffffff",
-                      fontWeight: 500,
-                    }
-                  : {
-                      color: "var(--text-secondary)",
-                      background: "transparent",
-                    }
-              }
-              onMouseEnter={(e) => {
-                if (filter !== cat) {
-                  e.currentTarget.style.background = "var(--card-bg)";
-                  e.currentTarget.style.color = "var(--text-primary)";
-                }
-              }}
-              onMouseLeave={(e) => {
-                if (filter !== cat) {
-                  e.currentTarget.style.background = "transparent";
-                  e.currentTarget.style.color = "var(--text-secondary)";
-                }
-              }}
-            >
-              <span>{cat}</span>
-              <span
-                className="text-xs px-2 py-0.5 rounded-full"
-                style={
-                  filter === cat
-                    ? { background: "rgba(255,255,255,0.2)", color: "#ffffff" }
-                    : {
-                        background: "var(--card-border)",
-                        color: "var(--text-secondary)",
-                      }
-                }
-              >
-                {getCategoryCount(cat)}
-              </span>
-            </button>
-          ))}
-        </nav>
-      </aside>
-
-      {/* ===== RIGHT CONTENT ===== */}
-      <main className="flex-1 p-8">
-        {/* Header */}
-        <div className="mb-8">
-          <h1
-            className="text-3xl font-bold"
-            style={{ color: "var(--text-primary)" }}
-          >
-            {filter === "All" ? "All Components" : `${filter} Components`}
-          </h1>
-          <p
-            className="text-sm mt-1"
-            style={{ color: "var(--text-secondary)" }}
-          >
-            {filtered.length} components found
-          </p>
+            ☰ Filter
+          </button>
         </div>
 
         {/* Grid */}
         {filtered.length > 0 ? (
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {filtered.map((comp) => (
               <div
                 key={comp.id}
@@ -148,8 +190,7 @@ const ComponentsPage = () => {
                 }}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.borderColor = "var(--accent)";
-                  e.currentTarget.style.boxShadow =
-                    "0 8px 30px rgba(236,72,153,0.15)";
+                  e.currentTarget.style.boxShadow = "0 8px 30px rgba(236,72,153,0.15)";
                 }}
                 onMouseLeave={(e) => {
                   e.currentTarget.style.borderColor = "var(--card-border)";
@@ -178,10 +219,7 @@ const ComponentsPage = () => {
                 </div>
 
                 {/* Card Info */}
-                <div
-                  className="p-4"
-                  style={{ borderTop: "1px solid var(--card-border)" }}
-                >
+                <div className="p-4" style={{ borderTop: "1px solid var(--card-border)" }}>
                   <div className="flex items-center justify-between">
                     <div>
                       <h2
@@ -190,10 +228,7 @@ const ComponentsPage = () => {
                       >
                         {comp.name}
                       </h2>
-                      <p
-                        className="text-xs mt-0.5"
-                        style={{ color: "var(--text-secondary)" }}
-                      >
+                      <p className="text-xs mt-0.5" style={{ color: "var(--text-secondary)" }}>
                         {comp.description}
                       </p>
                     </div>

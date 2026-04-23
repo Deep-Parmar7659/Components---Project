@@ -11,7 +11,7 @@ export default function PricingCard({
     <div
       className={`relative p-8 rounded-xl border transition duration-300 hover:-translate-y-2
       bg-(--card-bg) border-(--card-border)
-      ${popular ? "scale-105" : ""}`}
+      ${popular ? "md:scale-105" : ""}`}
     >
       {popular && (
         <span className="absolute top-4 right-4 text-xs font-medium px-3 py-1 rounded-full bg-(--text-primary) text-(--bg-main)">

@@ -110,11 +110,11 @@ function Contact() {
   };
 
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-900 py-16 px-4">
-      <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-center">
+    <div className="min-h-screen bg-white dark:bg-gray-900 py-12 sm:py-16 px-4">
+      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-10 items-center">
         {/* LEFT SIDE — Contact Info */}
         <div>
-          <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
+          <h1 className="text-2xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">
             Contact Us
           </h1>
           <p className="text-gray-600 dark:text-gray-400 mb-6">

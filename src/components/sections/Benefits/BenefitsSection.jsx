@@ -41,17 +41,20 @@ const benefitsData = [
 
 const BenefitsSection = () => {
   return (
-    <section id="benefits" className="py-26 bg-gray-50 dark:bg-gray-900">
-      <div className="text-center max-w-2xl mx-auto">
-        <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white">
+    <section
+      id="benefits"
+      className="py-16 sm:py-20 bg-gray-50 dark:bg-gray-900 px-4"
+    >
+      <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-14 px-4">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 dark:text-white">
           Why Choose TailwindTap?
         </h2>
-        <p className="py-2 mt-3 text-gray-500 dark:text-gray-400 text-sm md:text-base">
+        <p className="mt-3 text-gray-500 dark:text-gray-400 text-sm md:text-base">
           Discover powerful, ready-to-use components and templates to build
           modern React applications faster and more efficiently.
         </p>
       </div>
-      <div className="max-w-6xl mx-auto px-4 grid md:grid-cols-3 gap-6">
+      <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {benefitsData.map((benefit) => (
           <div
             key={benefit.id}

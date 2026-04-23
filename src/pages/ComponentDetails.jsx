@@ -23,7 +23,7 @@ const ComponentDetails = () => {
         {/* HEADER */}
         <div className="mb-8">
           <div className="flex items-center justify-between">
-            <h1 className="text-4xl font-bold capitalize tracking-tight">
+            <h1 className="text-2xl sm:text-4xl font-bold capitalize tracking-tight">
               {componentName.replace("-", " ")}
             </h1>
 

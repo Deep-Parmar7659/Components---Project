@@ -50,16 +50,16 @@ export default function AnimatedTestimonials({ testimonials }) {
 
   return (
     <div
-      className="min-h-100 max-w-6xl mx-auto py-20 px-6 transform-gpu"
+      className="min-h-100 max-w-6xl mx-auto py-12 sm:py-20 px-4 sm:px-6 transform-gpu"
       // Mouse Hover :- Autoplay Pause
       onMouseEnter={() => setPaused(true)}
       // Mouse Leave :- Autoplay Resumes
       onMouseLeave={() => setPaused(false)}
     >
-      <div className="grid md:grid-cols-2 gap-10 items-center">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-10 items-center">
         {/* Image Section */}
         {/* Always use that - h-[350px] */}
-        <div className="relative h-87.5 w-full">
+        <div className="relative h-64 sm:h-80 md:h-87.5 w-full">
           {/* AnimatePresence controls enter and exit animations. */}
           <AnimatePresence>
             {testimonials.map((item, index) => {
