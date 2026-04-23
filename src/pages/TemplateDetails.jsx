@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 import AppContainer from "../components/ui/AppContainer";
-import PreviewTabs from "../components/Docs/PreviewTabs";
-import { templateMap } from "../Data/templateMap";
+import PreviewTabs from "../components/docs/PreviewTabs";
+import { templateMap } from "../data/templateMap";
 
 const TemplateDetails = () => {
   const { slug } = useParams();
