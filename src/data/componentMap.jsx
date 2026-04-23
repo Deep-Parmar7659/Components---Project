@@ -29,9 +29,9 @@ import StepperDemo from "../components/ui/Stepper/StepperDemo";
 
 // ===== UI =====
 import GlowCard from "../components/ui/GlowCard/GlowCard";
-import GlassCard from "../Components/ui/GlassCard";
-import Container from "../Components/ui/Container";
-import Section from "../Components/ui/Section";
+import GlassCard from "../components/ui/GlassCard";
+import Container from "../components/ui/Container";
+import Section from "../components/ui/Section";
 import CardDemo from "../components/ui/Card/CardDemo";
 import NavbarDemo from "../components/ui/Navbar/NavbarDemo";
 
