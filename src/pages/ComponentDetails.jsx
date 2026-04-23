@@ -3,7 +3,7 @@ import AppContainer from "../components/ui/AppContainer";
 import FavoriteButton from "../components/ui/FavoriteButton";
 
 // Docs UI
-import PreviewTabs from "../components/Docs/PreviewTabs";
+import PreviewTabs from "../components/docs/PreviewTabs";
 import componentMap from "../data/componentMap";
 
 const ComponentDetails = () => {
