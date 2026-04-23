@@ -3,7 +3,7 @@ import {
   getFavorites,
   toggleFavorite,
   isFavorite,
-} from "../Utils/favoritesStorage";
+} from "../utils/favoritesStorage";
 
 const useFavorites = () => {
   const [favorites, setFavorites] = useState(() => {
