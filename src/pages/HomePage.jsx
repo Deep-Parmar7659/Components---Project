@@ -1,10 +1,10 @@
 import React, { useRef } from "react";
-import HeroSection from "../components/Sections/Hero/HeroSection";
-import PricingSection from "../components/Sections/Pricing/PricingSection";
+import HeroSection from "../components/sections/Hero/HeroSection";
+import PricingSection from "../components/sections/Pricing/PricingSection";
 import AnimatedTestimonials from "../components/Sections/AnimatedTestimonials/AnimatedTestimonials";
-import FeaturesSection from "../components/Sections/Features/FeaturesSection";
-import { testimonials } from "../components/Sections/AnimatedTestimonials/testimonialsData";
-import BenefitsSection from "../components/Sections/Benefits/BenefitsSection";
+import FeaturesSection from "../components/sections/Features/FeaturesSection";
+import { testimonials } from "../components/sections/AnimatedTestimonials/testimonialsData";
+import BenefitsSection from "../components/sections/Benefits/BenefitsSection";
 import CTASection from "../components/sections/CTA/CTASection";
 
 function HomePage() {
