@@ -1,4 +1,4 @@
-import { useFavorites } from "../../Context/FavoritesContext";
+import { useFavorites } from "../../context/FavoritesContext";
 const FavoriteButton = ({ name }) => {
   const { favorites, toggle } = useFavorites();
 
