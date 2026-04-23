@@ -1,6 +1,6 @@
 // User clicks favorite → Saved in context → Available everywhere
 import { createContext, useContext, useState } from "react";
-import { getFavorites, toggleFavorite } from "../Utils/favoritesStorage";
+import { getFavorites, toggleFavorite } from "../utils/favoritesStorage";
 
 const FavoritesContext = createContext();
 
