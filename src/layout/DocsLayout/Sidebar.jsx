@@ -1,6 +1,6 @@
 import { NavLink, Link } from "react-router-dom";
-import { useFavorites } from "../../Context/FavoritesContext";
-import { componentsData } from "../../Data/componentsData";
+import { useFavorites } from "../../context/FavoritesContext";
+import { componentsData } from "../../data/componentsData";
 const Sidebar = () => {
   const { favorites } = useFavorites();
 
