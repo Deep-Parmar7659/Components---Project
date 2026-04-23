@@ -13,6 +13,7 @@ import DocsLayout from "./layout/DocsLayout/DocsLayout";
 import ToastContainer from "./components/ui/Toast/ToastContainer";
 import ScrollToTop from "./components/ui/ScrollToTop";
 import FavoritesPage from "./pages/FavoritesPage";
+import NotFoundPage from "./pages/NotFoundPage";
 function App() {
   return (
     <Router>
@@ -32,6 +33,9 @@ function App() {
           <Route path="favorites" element={<FavoritesPage />} />
           <Route path="contact" element={<ContactPage />} />
         </Route>
+
+        {/* 404 — catch all unknown URLs */}
+        <Route path="*" element={<NotFoundPage />} />
       </Routes>
       <ScrollToTop />
     </Router>
