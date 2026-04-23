@@ -2,10 +2,10 @@
 // Data will stored in JSON format and dynamically render using map().
 import AuthTemplate from "../components/templates/AuthTemplate";
 import DashboardTemplate from "../components/templates/DashboardTemplate";
-import LandingTemplate from "../components/Templates/LandingTemplate";
-import SaaSTemplate from "../components/Templates/SaaSTemplate";
-import PortfolioTemplate from "../components/Templates/PortfolioTemplate";
-import EcommerceTemplate from "../components/Templates/EcommerceTemplate";
+import LandingTemplate from "../components/templates/LandingTemplate";
+import SaaSTemplate from "../components/templates/SaaSTemplate";
+import PortfolioTemplate from "../components/templates/PortfolioTemplate";
+import EcommerceTemplate from "../components/templates/EcommerceTemplate";
 import BlogTemplate from "../components/templates/BlogTemplate";
 import AdminDashboardTemplate from "../components/templates/AdminDashboardTemplate";
 import StartupTemplate from "../components/templates/StartupTemplate";
