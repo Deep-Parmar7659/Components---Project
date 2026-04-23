@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import HeroSection from "../components/sections/Hero/HeroSection";
 import PricingSection from "../components/sections/Pricing/PricingSection";
-import AnimatedTestimonials from "../components/Sections/AnimatedTestimonials/AnimatedTestimonials";
+import AnimatedTestimonials from "../components/sections/AnimatedTestimonials/AnimatedTestimonials";
 import FeaturesSection from "../components/sections/Features/FeaturesSection";
 import { testimonials } from "../components/sections/AnimatedTestimonials/testimonialsData";
 import BenefitsSection from "../components/sections/Benefits/BenefitsSection";
