@@ -9,7 +9,7 @@ import { createRoot } from "react-dom/client";
 import "prismjs/themes/prism-tomorrow.css";
 import ToastProvider from "./components/ui/Toast/ToastProvider.jsx";
 import { ThemeProvider } from "./context/ThemeContext.jsx";
-import { FavoritesProvider } from "./Context/FavoritesContext.jsx";
+import { FavoritesProvider } from "./context/FavoritesContext.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
