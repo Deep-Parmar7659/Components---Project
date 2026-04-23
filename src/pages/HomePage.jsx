@@ -5,7 +5,7 @@ import AnimatedTestimonials from "../components/Sections/AnimatedTestimonials/An
 import FeaturesSection from "../components/Sections/Features/FeaturesSection";
 import { testimonials } from "../components/Sections/AnimatedTestimonials/testimonialsData";
 import BenefitsSection from "../components/Sections/Benefits/BenefitsSection";
-import CTASection from "../components/Sections/CTA/CTASection";
+import CTASection from "../components/sections/CTA/CTASection";
 
 function HomePage() {
   const benefitsRef = useRef(null);
