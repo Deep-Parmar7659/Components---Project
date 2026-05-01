@@ -32,11 +32,11 @@ const CodeTabs = ({ codeFiles }) => {
     >
       {/* ===== TOP BAR — file tabs + copy buttons in ONE row ===== */}
       <div
-        className="flex items-center justify-between px-3 py-2"
+        className="flex items-center justify-between px-3 py-2 gap-2"
         style={{ borderBottom: "1px solid var(--card-border)" }}
       >
-        {/* LEFT — File Name Tabs */}
-        <div className="flex gap-1">
+        {/* LEFT — File Name Tabs (SCROLLABLE) */}
+        <div className="flex gap-1 overflow-x-auto scrollbar-hide flex-1">
           {codeFiles.map((file, index) => (
             <button
               key={index}
@@ -50,7 +50,7 @@ const CodeTabs = ({ codeFiles }) => {
                     }
                   : { color: "var(--code-tab-text)" }
               }
-              className="px-3 py-1.5 text-xs rounded-md transition"
+              className="px-3 py-1.5 text-xs rounded-md transition whitespace-nowrap shrink-0"
             >
               {file.name}
             </button>
@@ -58,7 +58,7 @@ const CodeTabs = ({ codeFiles }) => {
         </div>
 
         {/* RIGHT — Copy Buttons */}
-        <div className="flex gap-2">
+        <div className="flex gap-2 shrink-0">
           <button
             onClick={() => {
               navigator.clipboard.writeText(activeFile.content);
@@ -69,10 +69,11 @@ const CodeTabs = ({ codeFiles }) => {
           >
             {copied ? "Copied" : "Copy"}
           </button>
+
           {codeFiles.length > 1 && (
             <button
               onClick={handleCopyAll}
-              className="px-3 py-1.5 text-xs rounded-md bg-gray-300 text-white hover:bg-gray-500 hover:text-white font-medium transition dark:bg-gray-700 dark:hover:bg-gray-800"
+              className="px-3 py-1.5 text-xs rounded-md bg-gray-300 text-white hover:bg-gray-500 font-medium transition dark:bg-gray-700 dark:hover:bg-gray-800"
             >
               {copiedAll ? "Copied All" : "Copy All"}
             </button>
