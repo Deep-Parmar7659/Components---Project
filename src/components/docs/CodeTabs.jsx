@@ -16,6 +16,7 @@ const CodeTabs = ({ codeFiles }) => {
     const combinedCode = codeFiles
       .map((file) => `// ${file.name}\n${file.content}`)
       .join("\n\n");
+
     navigator.clipboard.writeText(combinedCode);
     setCopiedAll(true);
     setTimeout(() => setCopiedAll(false), 2000);
@@ -30,13 +31,13 @@ const CodeTabs = ({ codeFiles }) => {
         border: "1px solid var(--card-border)",
       }}
     >
-      {/* ===== TOP BAR — file tabs + copy buttons in ONE row ===== */}
+      {/* ===== TOP BAR ===== */}
       <div
-        className="flex items-center justify-between px-3 py-2 gap-2"
+        className="flex flex-col gap-2 px-3 py-2"
         style={{ borderBottom: "1px solid var(--card-border)" }}
       >
-        {/* LEFT — File Name Tabs (SCROLLABLE) */}
-        <div className="flex gap-1 overflow-x-auto scrollbar-hide flex-1">
+        {/* 🔥 SCROLLABLE TABS */}
+        <div className="flex overflow-x-auto gap-2 scrollbar-hide">
           {codeFiles.map((file, index) => (
             <button
               key={index}
@@ -50,15 +51,15 @@ const CodeTabs = ({ codeFiles }) => {
                     }
                   : { color: "var(--code-tab-text)" }
               }
-              className="px-3 py-1.5 text-xs rounded-md transition whitespace-nowrap shrink-0"
+              className="px-3 py-1.5 text-xs rounded-md whitespace-nowrap shrink-0 transition"
             >
               {file.name}
             </button>
           ))}
         </div>
 
-        {/* RIGHT — Copy Buttons */}
-        <div className="flex gap-2 shrink-0">
+        {/* 🔥 COPY BUTTONS (SEPARATE ROW FOR MOBILE FIX) */}
+        <div className="flex justify-end gap-2">
           <button
             onClick={() => {
               navigator.clipboard.writeText(activeFile.content);
