@@ -43,13 +43,13 @@ const BenefitsSection = () => {
   return (
     <section
       id="benefits"
-      className="py-16 sm:py-20 bg-gray-50 dark:bg-gray-900 px-4"
+      className="scroll-mt-24 py-16 sm:py-20 bg-gray-50 dark:bg-gray-900 px-4"
     >
       <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-14 px-4">
-        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 dark:text-white">
+        <h2 className="mt-10 text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 dark:text-white">
           Why Choose TailwindTap?
         </h2>
-        <p className="mt-3 text-gray-500 dark:text-gray-400 text-sm md:text-base">
+        <p className="mt-5 mb-8 text-gray-500 dark:text-gray-400 text-sm md:text-base">
           Discover powerful, ready-to-use components and templates to build
           modern React applications faster and more efficiently.
         </p>
