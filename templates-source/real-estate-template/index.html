@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CasaFind — Real Estate</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- NAV -->
+    <nav class="navbar">
+      <span class="nav-brand">Casa<span class="accent">Find</span></span>
+      <div class="nav-right">
+        <button class="btn-outline">List Property</button>
+        <button class="btn-primary">Sign In</button>
+      </div>
+    </nav>
+
+    <!-- HERO -->
+    <header class="hero">
+      <h1>Find Your Dream Home</h1>
+      <p>10,000+ verified listings across the US</p>
+      <div class="search-bar">
+        <input type="text" placeholder="🔍  City, address, or ZIP..." />
+        <select>
+          <option>For Sale</option>
+          <option>For Rent</option>
+        </select>
+        <button class="btn-primary">Search</button>
+      </div>
+      <div class="quick-filters">
+        <span class="filter-chip">Any Price</span>
+        <span class="filter-chip">1–3 Beds</span>
+        <span class="filter-chip">2+ Baths</span>
+        <span class="filter-chip">Near Schools</span>
+      </div>
+    </header>
+
+    <!-- LISTINGS -->
+    <section class="section">
+      <div class="listings-header">
+        <div>
+          <h2 style="text-align: left; margin-bottom: 2px">
+            Featured Properties
+          </h2>
+          <p class="subtitle" style="text-align: left">4 listings available</p>
+        </div>
+        <select class="sort-select">
+          <option>Sort: Newest</option>
+          <option>Price: Low to High</option>
+          <option>Price: High to Low</option>
+        </select>
+      </div>
+
+      <div class="listings-grid">
+        <div class="listing-card">
+          <div
+            class="listing-img"
+            style="background: linear-gradient(135deg, #fef3c7, #fde68a)"
+          >
+            🏡
+            <div class="listing-badges">
+              <span class="lbadge amber">For Sale</span>
+              <span class="lbadge dark">Featured</span>
+            </div>
+          </div>
+          <div class="listing-body">
+            <div class="listing-top">
+              <div>
+                <p class="listing-name">Sunset Villa</p>
+                <p class="listing-loc">📍 Beverly Hills, CA</p>
+              </div>
+              <p class="listing-price">$1.2M</p>
+            </div>
+            <div class="listing-meta">
+              <span>🛏 4 Beds</span><span>🚿 3 Baths</span
+              ><span>📐 2,800 sqft</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="listing-card">
+          <div
+            class="listing-img"
+            style="background: linear-gradient(135deg, #dbeafe, #bfdbfe)"
+          >
+            🏢
+            <div class="listing-badges">
+              <span class="lbadge amber">For Rent</span>
+              <span class="lbadge dark">New</span>
+            </div>
+          </div>
+          <div class="listing-body">
+            <div class="listing-top">
+              <div>
+                <p class="listing-name">Downtown Loft</p>
+                <p class="listing-loc">📍 New York, NY</p>
+              </div>
+              <p class="listing-price">$4,500/mo</p>
+            </div>
+            <div class="listing-meta">
+              <span>🛏 2 Beds</span><span>🚿 2 Baths</span
+              ><span>📐 1,100 sqft</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="listing-card">
+          <div
+            class="listing-img"
+            style="background: linear-gradient(135deg, #dcfce7, #bbf7d0)"
+          >
+            🏠
+            <div class="listing-badges">
+              <span class="lbadge amber">For Sale</span>
+            </div>
+          </div>
+          <div class="listing-body">
+            <div class="listing-top">
+              <div>
+                <p class="listing-name">Garden Cottage</p>
+                <p class="listing-loc">📍 Austin, TX</p>
+              </div>
+              <p class="listing-price">$480K</p>
+            </div>
+            <div class="listing-meta">
+              <span>🛏 3 Beds</span><span>🚿 2 Baths</span
+              ><span>📐 1,600 sqft</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="listing-card">
+          <div
+            class="listing-img"
+            style="background: linear-gradient(135deg, #fce7f3, #fbcfe8)"
+          >
+            🏙️
+            <div class="listing-badges">
+              <span class="lbadge amber">For Sale</span>
+              <span class="lbadge dark">Hot</span>
+            </div>
+          </div>
+          <div class="listing-body">
+            <div class="listing-top">
+              <div>
+                <p class="listing-name">Penthouse Suite</p>
+                <p class="listing-loc">📍 Miami, FL</p>
+              </div>
+              <p class="listing-price">$3.5M</p>
+            </div>
+            <div class="listing-meta">
+              <span>🛏 5 Beds</span><span>🚿 4 Baths</span
+              ><span>📐 4,200 sqft</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY US -->
+    <section class="section section-amber">
+      <h2>Why CasaFind?</h2>
+      <p class="subtitle">The smarter way to find your home</p>
+      <div class="why-grid">
+        <div class="why-card">
+          <span>✅</span>
+          <h3>Verified Listings</h3>
+          <p>Every property is manually verified by our team.</p>
+        </div>
+        <div class="why-card">
+          <span>⚡</span>
+          <h3>Instant Alerts</h3>
+          <p>Get notified the moment a new match goes live.</p>
+        </div>
+        <div class="why-card">
+          <span>🤝</span>
+          <h3>Trusted Agents</h3>
+          <p>Work with certified, experienced real estate agents.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <p class="footer-brand">CasaFind Real Estate</p>
+      <p>📧 hello@casafind.com · 📞 1-800-CASA-FIND</p>
+      <p>© 2025 CasaFind. All rights reserved.</p>
+    </footer>
+  </body>
+</html>

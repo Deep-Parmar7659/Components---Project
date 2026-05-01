@@ -2,6 +2,86 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { templatesData } from "../data/templatesData";
 
+const SidebarContent = ({
+  search,
+  setSearch,
+  filter,
+  categories,
+  handleCategorySelect,
+  getCategoryCount,
+}) => (
+  <>
+    {/* Search */}
+    <div className="relative mb-6">
+      <input
+        type="text"
+        placeholder="Search Templates"
+        value={search}
+        onChange={(e) => setSearch(e.target.value)}
+        style={{
+          background: "var(--card-bg)",
+          border: "1px solid var(--card-border)",
+          color: "var(--text-primary)",
+        }}
+        className="w-full px-4 py-2.5 pr-10 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-pink-500"
+      />
+      <span
+        className="absolute right-3 top-1/2 -translate-y-1/2 text-sm"
+        style={{ color: "var(--text-secondary)" }}
+      >
+        🔍
+      </span>
+    </div>
+
+    {/* Category List */}
+    <nav className="space-y-1">
+      {categories.map((cat) => (
+        <button
+          key={cat}
+          onClick={() => handleCategorySelect(cat)}
+          className="w-full flex items-center justify-between px-4 py-2.5 rounded-xl text-sm transition-all"
+          style={
+            filter === cat
+              ? {
+                  background: "var(--accent)",
+                  color: "#ffffff",
+                  fontWeight: 500,
+                }
+              : { color: "var(--text-secondary)", background: "transparent" }
+          }
+          onMouseEnter={(e) => {
+            if (filter !== cat) {
+              e.currentTarget.style.background = "var(--card-bg)";
+              e.currentTarget.style.color = "var(--text-primary)";
+            }
+          }}
+          onMouseLeave={(e) => {
+            if (filter !== cat) {
+              e.currentTarget.style.background = "transparent";
+              e.currentTarget.style.color = "var(--text-secondary)";
+            }
+          }}
+        >
+          <span>{cat}</span>
+          <span
+            className="text-xs px-2 py-0.5 rounded-full"
+            style={
+              filter === cat
+                ? { background: "rgba(255,255,255,0.2)", color: "#ffffff" }
+                : {
+                    background: "var(--card-border)",
+                    color: "var(--text-secondary)",
+                  }
+            }
+          >
+            {getCategoryCount(cat)}
+          </span>
+        </button>
+      ))}
+    </nav>
+  </>
+);
+
 const TemplatesPage = () => {
   const [search, setSearch] = useState("");
   const [filter, setFilter] = useState("All");
@@ -9,14 +89,27 @@ const TemplatesPage = () => {
   const navigate = useNavigate();
 
   const categories = [
-    "All","Landing","Dashboard","Auth","E-commerce",
-    "Blog","Portfolio","SaaS","Startup","Admin",
+    "All",
+    "Landing",
+    "Dashboard",
+    "Auth",
+    "E-commerce",
+    "Blog",
+    "Portfolio",
+    "SaaS",
+    "Startup",
+    "Admin",
+    "Restaurant",
+    "Agency",
+    "Medical",
+    "Real Estate",
+    "Job Board",
   ];
 
   const getCategoryCount = (cat) => {
     if (cat === "All") return templatesData.length;
     return templatesData.filter((t) =>
-      t.name.toLowerCase().includes(cat.toLowerCase())
+      t.name.toLowerCase().includes(cat.toLowerCase()),
     ).length;
   };
 
@@ -32,71 +125,14 @@ const TemplatesPage = () => {
     setSidebarOpen(false);
   };
 
-  const SidebarContent = () => (
-    <>
-      {/* Search */}
-      <div className="relative mb-6">
-        <input
-          type="text"
-          placeholder="Search Templates"
-          value={search}
-          onChange={(e) => setSearch(e.target.value)}
-          style={{
-            background: "var(--card-bg)",
-            border: "1px solid var(--card-border)",
-            color: "var(--text-primary)",
-          }}
-          className="w-full px-4 py-2.5 pr-10 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-pink-500"
-        />
-        <span
-          className="absolute right-3 top-1/2 -translate-y-1/2 text-sm"
-          style={{ color: "var(--text-secondary)" }}
-        >
-          🔍
-        </span>
-      </div>
-
-      {/* Category List */}
-      <nav className="space-y-1">
-        {categories.map((cat) => (
-          <button
-            key={cat}
-            onClick={() => handleCategorySelect(cat)}
-            className="w-full flex items-center justify-between px-4 py-2.5 rounded-xl text-sm transition-all"
-            style={
-              filter === cat
-                ? { background: "var(--accent)", color: "#ffffff", fontWeight: 500 }
-                : { color: "var(--text-secondary)", background: "transparent" }
-            }
-            onMouseEnter={(e) => {
-              if (filter !== cat) {
-                e.currentTarget.style.background = "var(--card-bg)";
-                e.currentTarget.style.color = "var(--text-primary)";
-              }
-            }}
-            onMouseLeave={(e) => {
-              if (filter !== cat) {
-                e.currentTarget.style.background = "transparent";
-                e.currentTarget.style.color = "var(--text-secondary)";
-              }
-            }}
-          >
-            <span>{cat}</span>
-            <span
-              className="text-xs px-2 py-0.5 rounded-full"
-              style={
-                filter === cat
-                  ? { background: "rgba(255,255,255,0.2)", color: "#ffffff" }
-                  : { background: "var(--card-border)", color: "var(--text-secondary)" }
-              }
-            >
-              {getCategoryCount(cat)}
-            </span>
-          </button>
-        ))}
-      </nav>
-    </>
-  );
+  const sidebarContentProps = {
+    search,
+    setSearch,
+    filter,
+    categories,
+    handleCategorySelect,
+    getCategoryCount,
+  };
 
   return (
     <div
@@ -111,7 +147,7 @@ const TemplatesPage = () => {
           borderRight: "1px solid var(--card-border)",
         }}
       >
-        <SidebarContent />
+        <SidebarContent {...sidebarContentProps} />
       </aside>
 
       {/* ===== MOBILE SIDEBAR OVERLAY ===== */}
@@ -140,7 +176,7 @@ const TemplatesPage = () => {
             ✕
           </button>
         </div>
-        <SidebarContent />
+        <SidebarContent {...sidebarContentProps} />
       </aside>
 
       {/* ===== RIGHT CONTENT ===== */}
@@ -154,14 +190,17 @@ const TemplatesPage = () => {
             >
               {filter === "All" ? "All Templates" : `${filter} Templates`}
             </h1>
-            <p className="text-sm mt-1" style={{ color: "var(--text-secondary)" }}>
+            <p
+              className="text-sm mt-1"
+              style={{ color: "var(--text-secondary)" }}
+            >
               {filtered.length} templates found
             </p>
           </div>
           {/* Mobile filter button */}
           <button
             onClick={() => setSidebarOpen(true)}
-            className="md:hidden px-4 py-2 rounded-xl text-sm font-medium flex-shrink-0"
+            className="md:hidden px-4 py-2 rounded-xl text-sm font-medium shrink-0"
             style={{
               background: "var(--card-bg)",
               border: "1px solid var(--card-border)",
@@ -186,7 +225,8 @@ const TemplatesPage = () => {
                 }}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.borderColor = "var(--accent)";
-                  e.currentTarget.style.boxShadow = "0 8px 30px rgba(236,72,153,0.15)";
+                  e.currentTarget.style.boxShadow =
+                    "0 8px 30px rgba(236,72,153,0.15)";
                 }}
                 onMouseLeave={(e) => {
                   e.currentTarget.style.borderColor = "var(--card-border)";
@@ -194,7 +234,10 @@ const TemplatesPage = () => {
                 }}
               >
                 {/* Preview Image */}
-                <div className="w-full h-44 overflow-hidden" style={{ background: "var(--bg-secondary)" }}>
+                <div
+                  className="w-full h-44 overflow-hidden"
+                  style={{ background: "var(--bg-secondary)" }}
+                >
                   {template.preview ? (
                     <img
                       src={template.preview}
@@ -212,13 +255,22 @@ const TemplatesPage = () => {
                 </div>
 
                 {/* Card Info */}
-                <div className="p-4" style={{ borderTop: "1px solid var(--card-border)" }}>
+                <div
+                  className="p-4"
+                  style={{ borderTop: "1px solid var(--card-border)" }}
+                >
                   <div className="flex items-center justify-between">
                     <div>
-                      <h2 className="text-base font-semibold" style={{ color: "var(--text-primary)" }}>
+                      <h2
+                        className="text-base font-semibold"
+                        style={{ color: "var(--text-primary)" }}
+                      >
                         {template.name}
                       </h2>
-                      <p className="text-xs mt-0.5" style={{ color: "var(--text-secondary)" }}>
+                      <p
+                        className="text-xs mt-0.5"
+                        style={{ color: "var(--text-secondary)" }}
+                      >
                         Click to preview template
                       </p>
                     </div>
@@ -234,7 +286,10 @@ const TemplatesPage = () => {
             ))}
           </div>
         ) : (
-          <p className="text-center mt-20 text-lg" style={{ color: "var(--text-secondary)" }}>
+          <p
+            className="text-center mt-20 text-lg"
+            style={{ color: "var(--text-secondary)" }}
+          >
             No templates found 😅
           </p>
         )}

@@ -7,6 +7,11 @@ import EcommerceTemplate from "../components/templates/EcommerceTemplate";
 import BlogTemplate from "../components/templates/BlogTemplate";
 import AdminDashboardTemplate from "../components/templates/AdminDashboardTemplate";
 import StartupTemplate from "../components/templates/StartupTemplate";
+import RestaurantTemplate from "../components/templates/RestaurantTemplate";
+import AgencyTemplate from "../components/templates/AgencyTemplate";
+import MedicalTemplate from "../components/templates/MedicalTemplate";
+import RealEstateTemplate from "../components/templates/RealEstateTemplate";
+import JobBoardTemplate from "../components/templates/JobBoardTemplate";
 
 export const templateMap = {
   "auth-template": {
@@ -55,5 +60,30 @@ export const templateMap = {
     component: <StartupTemplate />,
     fileName: "StartupTemplate.jsx",
     file: "/templates/startup-template.zip",
+  },
+  "restaurant-template": {
+    component: <RestaurantTemplate />,
+    fileName: "RestaurantTemplate.jsx",
+    file: "/templates/restaurant-template.zip",
+  },
+  "agency-template": {
+    component: <AgencyTemplate />,
+    fileName: "AgencyTemplate.jsx",
+    file: "/templates/agency-template.zip",
+  },
+  "medical-template": {
+    component: <MedicalTemplate />,
+    fileName: "MedicalTemplate.jsx",
+    file: "/templates/medical-template.zip",
+  },
+  "real-estate-template": {
+    component: <RealEstateTemplate />,
+    fileName: "RealEstateTemplate.jsx",
+    file: "/templates/real-estate-template.zip",
+  },
+  "job-board-template": {
+    component: <JobBoardTemplate />,
+    fileName: "JobBoardTemplate.jsx",
+    file: "/templates/job-board-template.zip",
   },
 };

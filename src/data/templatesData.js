@@ -9,6 +9,11 @@ import EcommerceTemplate from "../components/templates/EcommerceTemplate";
 import BlogTemplate from "../components/templates/BlogTemplate";
 import AdminDashboardTemplate from "../components/templates/AdminDashboardTemplate";
 import StartupTemplate from "../components/templates/StartupTemplate";
+import RestaurantTemplate from "../components/templates/RestaurantTemplate";
+import AgencyTemplate from "../components/templates/AgencyTemplate";
+import MedicalTemplate from "../components/templates/MedicalTemplate";
+import RealEstateTemplate from "../components/templates/RealEstateTemplate";
+import JobBoardTemplate from "../components/templates/JobBoardTemplate";
 
 export const templatesData = [
   {
@@ -82,5 +87,45 @@ export const templatesData = [
     component: "StartupTemplate",
     file: "/templates/startup-template.zip",
     preview: "/previews/Startup.png",
+  },
+  {
+    id: 10,
+    name: "Restaurant Template",
+    slug: "restaurant-template",
+    component: "RestaurantTemplate",
+    file: "/templates/restaurant-template.zip",
+    preview: "/previews/restaurant-template.png",
+  },
+  {
+    id: 11,
+    name: "Agency Template",
+    slug: "agency-template",
+    component: "AgencyTemplate",
+    file: "/templates/agency-template.zip",
+    preview: "/previews/agency-template.png",
+  },
+  {
+    id: 12,
+    name: "Medical Template",
+    slug: "medical-template",
+    component: "MedicalTemplate",
+    file: "/templates/medical-template.zip",
+    preview: "/previews/medical-template.png",
+  },
+  {
+    id: 13,
+    name: "Real Estate Template",
+    slug: "real-estate-template",
+    component: "RealEstateTemplate",
+    file: "/templates/real-estate-template.zip",
+    preview: "/previews/real-estate-template.png",
+  },
+  {
+    id: 14,
+    name: "Job Board Template",
+    slug: "job-board-template",
+    component: "JobBoardTemplate",
+    file: "/templates/job-board-template.zip",
+    preview: "/previews/job-board-template.png",
   },
 ];
