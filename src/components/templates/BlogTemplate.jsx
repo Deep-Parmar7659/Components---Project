@@ -69,7 +69,7 @@ const BlogTemplate = () => {
       </section>
 
       {/* NEWSLETTER */}
-      <section className="px-4 py-12 bg-pink-500 text-white text-center">
+      <section className="px-4 py-12 bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-white text-center">
         <h2 className="text-xl font-bold">Subscribe to Newsletter</h2>
         <p className="mt-2 text-xs">
           Get latest updates directly to your inbox.
@@ -80,7 +80,7 @@ const BlogTemplate = () => {
             placeholder="Enter your email"
             className="w-full px-4 py-2 rounded-lg text-gray-900 text-sm focus:outline-none"
           />
-          <button className="w-full px-4 py-2 bg-white text-pink-500 font-semibold rounded-lg text-sm">
+          <button className="w-full px-4 py-2 bg-pink-500 text-white font-semibold rounded-lg text-sm hover:bg-pink-600">
             Subscribe
           </button>
         </div>

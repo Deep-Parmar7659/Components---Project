@@ -89,12 +89,12 @@ const StartupTemplate = () => {
       </section>
 
       {/* CTA */}
-      <section className="px-4 py-12 bg-pink-500 text-white text-center">
+      <section className="px-4 py-12 bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-white text-center">
         <h2 className="text-xl font-bold">Ready to build your startup?</h2>
         <p className="mt-2 text-xs">
           Join thousands of founders already growing.
         </p>
-        <button className="mt-5 px-6 py-2.5 bg-white text-pink-500 font-semibold rounded-xl text-sm">
+        <button className="mt-5 px-6 py-2.5 bg-pink-500 text-white font-semibold rounded-xl text-sm hover:bg-pink-600">
           Start Free Trial
         </button>
       </section>

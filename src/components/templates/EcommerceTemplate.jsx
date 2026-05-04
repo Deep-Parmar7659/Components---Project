@@ -56,12 +56,12 @@ const EcommerceTemplate = () => {
       </section>
 
       {/* OFFER */}
-      <section className="px-6 py-16 text-center bg-pink-500 text-white">
+      <section className="px-6 py-16 text-center bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-white">
         <h2 className="text-2xl md:text-3xl font-bold">Special Offer 🎉</h2>
         <p className="mt-4 text-sm md:text-base">
           Get 50% off on selected items.
         </p>
-        <button className="mt-6 px-6 py-3 bg-white text-pink-500 rounded-xl text-sm md:text-base">
+        <button className="mt-6 px-6 py-3 bg-pink-500 text-white rounded-xl text-sm md:text-base hover:bg-pink-600">
           Shop Deals
         </button>
       </section>

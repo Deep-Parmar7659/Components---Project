@@ -45,3 +45,12 @@ body {
   background: #ec4899;
   color: white;
 }
+
+.cta button {
+  background: white;
+  color: #ec4899;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-weight: bold;
+}

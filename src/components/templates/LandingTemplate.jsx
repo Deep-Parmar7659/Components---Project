@@ -149,12 +149,12 @@ const LandingTemplate = () => {
       </section>
 
       {/* CTA */}
-      <section className="px-4 py-12 bg-pink-500 text-white text-center">
+      <section className="px-4 py-12 bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-white text-center">
         <h2 className="text-xl font-bold">Ready to get started?</h2>
         <p className="mt-2 text-xs">
           Join thousands of developers building with TailwindTap.
         </p>
-        <button className="mt-5 px-6 py-2.5 bg-white text-pink-500 font-semibold rounded-full text-sm hover:bg-gray-100 transition">
+        <button className="mt-5 px-6 py-2.5 bg-pink-500 text-white font-semibold rounded-full text-sm hover:bg-pink-600 transition">
           Start Building Free
         </button>
       </section>
