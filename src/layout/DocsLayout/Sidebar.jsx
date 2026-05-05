@@ -11,7 +11,9 @@ const Sidebar = ({ onClose }) => {
   const activeClass = "bg-pink-600 text-white";
 
   const basicComponents = componentsData.filter((c) => c.type === "Basic");
-  const advancedComponents = componentsData.filter((c) => c.type === "Advanced");
+  const advancedComponents = componentsData.filter(
+    (c) => c.type === "Advanced",
+  );
   const uiComponents = componentsData.filter((c) => c.type === "UI");
 
   const formatPath = (name) => name.toLowerCase().replace(/\s+/g, "-");
@@ -37,7 +39,9 @@ const Sidebar = ({ onClose }) => {
       {/* FAVORITES */}
       {favorites.length > 0 && (
         <div className="mb-6">
-          <h2 className="text-sm font-semibold mb-2 text-gray-500">Favorites</h2>
+          <h2 className="text-sm font-semibold mb-2 text-gray-500">
+            Favorites
+          </h2>
           <ul className="space-y-2">
             {favorites.map((item) => (
               <li key={item}>
