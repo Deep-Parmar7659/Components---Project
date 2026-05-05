@@ -62,7 +62,7 @@ A modern, open-source UI component library built with **React** and **Tailwind C
 
 ```bash
 # Clone the repository
-git clone https://github.com/your-username/tailwindtap.git
+git clone https://github.com/Deep-Parmar7659/Components---Project/
 
 # Navigate to project folder
 cd tailwindtap
