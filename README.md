@@ -2,7 +2,7 @@
 
 A modern, open-source UI component library built with **React** and **Tailwind CSS**. Copy-paste ready components, fully responsive templates, and dark mode — everything you need to build beautiful web apps faster.
 
-🌐 **Live Site:** [tailwindtap.com](https://tailwind-components-project.vercel.app/)
+🌐 **Live Site:** [tailwindtap.com](https://components-project-three.vercel.app/)
 
 ---
 
